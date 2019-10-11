@@ -1,0 +1,62 @@
+.formulario-inscricao {
+    background: #053868;
+    width: 50%;
+    border-radius: 20px;
+    padding: 1% 2% 0% 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.formulario-inscricao-title {
+    color: white;
+    font-size: 2.5vw;
+}
+
+.formulario-inscricao-subtitle {
+    font-size: 1.3vw;
+    color: white;
+}
+
+.inscricao-label {
+    color: white;
+    font-size: 1.5vw;
+}
+
+.formulario-inscricao-segundocurso {
+    color: white;
+    font-size: 1.6vw;
+}
+
+.formulario-contato-inscricao-form {
+    background: #ff000000;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+}
+
+.form-cadastro-inputcurso {
+    background: transparent;
+    border: 1px solid #f44336;
+    outline: none;
+}
+
+tr.teste {
+    /* width: 50%; */
+    float: left;
+}
+
+tr.enviar-inscricao {
+    float: right;
+    display: inline-block;
+}
+
+.radio {
+    width: 14px !important;
+    height: 14px !important;
+    float: inherit !important;
+}
+
+.title:before, .title:after {
+    background-color: #fff;
+    }

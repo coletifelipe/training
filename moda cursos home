@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt">
+<!--<![endif]-->
+
+<head>
+
+	<!-- Owl Carrossel -->
+	<link href="/css/owl.carousel.min.css" media="all" rel="stylesheet" />
+	<link href="/css/owl.theme.default.min.css" media="all" rel="stylesheet" />
+
+	<title>Trainning Curso SAP ITIL Excel Treinamento Hana Pmi Cobit Neg&oacute;cios Bpmn Cisco CCNA Oracle ABAP Java Projetos Iphone 6</title>
+
+	<meta name="description" content="Na Trainning Education você encontra os mais completos cursos de SAP com certificado. Aprenda tudo sobre SAP R/3, ECC, ABAP e muito mais!">
+
+	<?php
+	require_once "conexao.php";
+	include 'include/head.php';
+	?>
+
+	<link href="/css/home.css" media="all" rel="stylesheet" />
+
+	<style>
+		/*.last-day { display: none !important; }*/
+		@media screen and (max-width: 1280px) {
+			#mask {
+				display: none !important;
+			}
+		}
+
+		.banner-promo-geral {
+			display: none !important;
+		}
+
+		/* The Modal (background) */
+		.modal-teste {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+		  background-color: #fefefe;
+		  margin: auto;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 80%;
+		}
+
+		/* The Close Button */
+		.modal-close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  cursor:pointer;
+		  font-weight: bold;
+		}
+
+		.modal-close:hover,
+		.modal-close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+	</style>
+
+	<!-- Criteo Homepage Tag -->
+	<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+	<script type="text/javascript">
+		window.criteo_q = window.criteo_q || [];
+		var deviceType = /iPad/.test(navigator.userAgent) ? "t" : /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Silk/.test(navigator.userAgent) ? "m" : "d";
+		window.criteo_q.push({
+				event: "setAccount",
+				account: 35300
+			}, // You should never update this line
+			{
+				event: "setSiteType",
+				type: deviceType
+			}, {
+				event: "viewHome"
+			});
+	</script>
+	<!-- END Criteo Home Page Tag -->
+
+</head>
+
+<body>
+
+
+	<?php include 'include/header.php'; ?>
+
+	<?php include 'include/formulario-lightbox.php'; ?>
+	<?php include 'include/forma-de-pagamento.php';?>
+
+
+	<div class="banner-home desktop">
+		<div class="owl-carousel owl-theme">
+
+			<div class="item">
+				<a href="/promocao.php">
+					<img src="imagens/promocao/banner-aniversario-2019.jpg" alt="Aniversário Trainning">
+				</a>
+			</div>
+
+			<div class="item">
+				<a href="/cursos/curso-itil-4-foundations">
+					<img src="imagens/home/banner-itil4.jpg" alt="Curso Itil 4">
+				</a>
+			</div>
+
+			<div class="item">
+				<a href="/cursos-sap">
+					<img src="imagens/home/sap-erp-desktop.jpg" alt="Cursos SAP">
+				</a>
+			</div>
+
+			<div class="item">
+				<a href="/formacao/academia-desenvolvedor-web-java">
+					<img src="imagens/home/academia-desenvolvedor-web-java.jpg" alt="Formação Desenvolvedor WEB Java Applications">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="banner-home mobile">
+		<div class="owl-carousel owl-theme">
+
+			<div class="item">
+				<a href="/promocao.php">
+					<img src="imagens/promocao/banner-aniversario-2019-mobile.jpg" alt="Aniversário Trainning">
+				</a>
+			</div>
+
+			<div class="item">
+				<a href="/cursos/curso-itil-4-foundations">
+					<img src="imagens/home/banner-itil4-mobile.jpg" alt="Curso Itil 4">
+				</a>
+			</div>
+
+			<div class="item">
+				<a href="/cursos-sap">
+					<img src="imagens/home/sap-erp-mobile.jpg" alt="Cursos SAP">
+				</a>
+			</div>
+
+			<div class="item">
+				<a href="/formacao/academia-desenvolvedor-web-java">
+					<img src="imagens/home/academia-desenvolvedor-web-java-mob.jpg" alt="Formação Desenvolvedor WEB Java Applications">
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="dividir-blocos outros-destaques">
+
+		<div class="bloco-1-1" style="min-width: 390px;">
+			<a href="/formacao/curso_mcse_ccna_ceh_itil_vmware" title="Formação Redes e Segurança">
+				<img src="/imagens/home/formacao-analista-redes-seguranca-2.jpg" alt="Formação Redes e Segurança">
+			</a>
+		</div>
+		<div class="bloco-1-1">
+			<a href="/formacao/formacao-asap-analista-sap" title="Formação ASAP Analista SAP">
+				<img src="/imagens/home/formacao-analista-sap.jpg" alt="Formação ASAP Analista SAP">
+			</a>
+		</div>
+
+		<div class="bloco-1-1">
+			<a href="/formacao/formacao-mcsa-windows-server-2016" title="Formação MCSA - Windows Server 2016">
+				<img src="/imagens/home/banner-mcsa.gif" alt="Formação MCSA - Windows Server 2016">
+			</a>
+		</div>
+
+		<div class="bloco-1-1">
+			<a href="/cursos/curso-scrum-master-gerenciamento-agil-projetos-software" title="Curso de Scrum - Gerenciamento Ágil de Projetos de Software">
+				<img src="/imagens/home/banner-scrum.jpg" alt="Curso de Scrum - Gerenciamento Ágil de Projetos de Software">
+			</a>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+	<section class="carrossel-home">
+		<div class="container" style="max-width: 95%;">
+
+			<h2>Os cursos mais buscados no momento</h2>
+
+			<div class="owl-carousel owl-theme ch-padrao">
+
+
+
+
+				<?php
+
+				$messolicitacoes = date('m');
+				$anosolicitacoes = date('Y');
+
+				$sql2 = "select  nome_do_curso, COUNT(*) from recebe_info_curso where  data_cadastro BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() group by nome_do_curso order by COUNT(*) DESC limit 15";
+				$res2 = mysqlexecuta($idcon, $sql2);
+
+
+				while ($row = mysql_fetch_array($res2, MYSQL_NUM)) {
+
+					$idmaisbuscados = str_replace('-', '', str_replace('--', '', substr($row[0], 0, 4)));
+
+
+					if (substr($idmaisbuscados, 0, 2) != '90') {
+
+						$sql_curso = "SELECT * FROM tr_cursos where id = '$idmaisbuscados'";
+						$res_curso = mysqlexecuta($idcon, $sql_curso);
+						$abrev_curso = ""; //utf8_encode(mysql_result($res_curso,0,"abrev_curso"));
+						$nome_curso = utf8_encode(mysql_result($res_curso, 0, "nome_curso"));
+						$url_curso  = "/cursos/" . mysql_result($res_curso, 0, "url");
+						$img_curso  = "/imagens/cursos/" . mysql_result($res_curso, 0, "imagem_curso");
+						$img_curso_icon = 	"/img/" . mysql_result($res_curso, 0, "img");
+
+						$valor_avista = mysql_result($res_curso, 0, "valor_avista");
+
+						$valor_promocao_aovivo = mysql_result($res_curso, 0, "promocao_aovivo");
+
+						$valor_desconto_aovivo = $valor_avista - ($valor_avista * $valor_promocao_aovivo);
+						$valor_por_aovivo  	= $valor_desconto_aovivo;
+						$cursosdaformacao = "";
+					} else {
+
+						$id_separando_form = substr($idmaisbuscados, 2);
+						$sql_curso = "SELECT * FROM tr_formacoes where id = '$id_separando_form'";
+						$res_curso = mysqlexecuta($idcon, $sql_curso);
+
+						$nome_curso = utf8_encode(mysql_result($res_curso, 0, "nome_formacao"));
+						$abrev_curso = "<p>(" . utf8_encode(mysql_result($res_curso, 0, "nome_abrev_form")) . ")</p>";
+						$url_curso  = "/formacao/" . mysql_result($res_curso, 0, "url");
+						$img_curso  = "/imagens/formacoes/" . mysql_result($res_curso, 0, "imagem_curso");
+						$img_curso_icon = 	"/img/" . mysql_result($res_curso, 0, "img");
+
+						$relacionados = mysql_result($res_curso, 0, "cursos_do_combo");
+						$separando = explode(",", $relacionados);
+
+						$valor_avista = mysql_result($res_curso, 0, "valor_avista");
+
+						$valor_promocao_aovivo = mysql_result($res_curso, 0, "promocao_aovivo");
+
+						$valor_desconto_aovivo = $valor_avista - ($valor_avista * $valor_promocao_aovivo);
+						$valor_por_aovivo  	= $valor_desconto_aovivo;
+
+						$nome_abrev_curso = utf8_encode(mysql_result($res_curso, 0, "nome_abrev_form"));
+
+						$cursosdaformacao = "
+								<span>
+									<i>" . $nome_abrev_curso . "</i>
+
+									<b>" . count($separando) . " Cursos em 1 Formação</b>
+								</span>";
+					}
+
+
+
+					if ($valor_avista != '0.00') {
+						?>
+						<!-- modal cursos home coloquei o ID Modal-Open -->
+						<div id="Modal-Open" class="item">
+							<a href="<?php echo $url_curso; ?>">
+
+
+
+								<img src="<?php echo $img_curso; ?>" alt="<?php echo $nome_curso; ?>">
+
+								<?php echo $cursosdaformacao; ?>
+
+
+								<div class="price-box">
+									<h4><?php echo $nome_curso; ?></h4>
+
+									<div class="dividir-blocos">
+										<div class="bloco-2-1">
+
+											<small>de: R$ <span class="tracado"><?php echo getInfoAvista($valor_avista); ?></span> </small> <br>
+											<span>por: 12x R$ <b><?php echo number_format(getInfoParcela($valor_desconto_aovivo, 12), 2, ',', '.'); ?></b></span><br>
+											<i>ou <b>R$ <?php echo getInfoAvista($valor_por_aovivo); ?></b> à vista</i>
+										</div>
+										<div class="bloco-1-1">
+											<?php if (mysql_result($res_curso, 0, "img") != "") { ?>
+
+												<img src="<?php echo $img_curso_icon; ?>">
+
+
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+
+
+
+				<?php }
+				} ?>
+
+
+			</div>
+
+		</div>
+	</section>
+
+	<!-- The Modal -->
+<div id="myModal" class="modal-teste">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h4><?php echo $nome_curso; ?></h4>
+  </div>
+
+</div>
+
+
+
+
+
+	<?php
+
+
+
+
+	$sql_categ_conteudo = "SELECT * FROM tr_cursos_categ where visivel_pag_form = 'sim' order by ordem_menu asc";
+	$res_categ_conteudo = mysqlexecuta($idcon, $sql_categ_conteudo);
+	$num_black = 0;
+
+	while ($row = mysql_fetch_array($res_categ_conteudo)) {
+
+		$id = $row['id'];
+
+		$num_black = $num_black + 1;
+
+		$sql_curso = "SELECT * FROM tr_cursos where categoria_id = '$id' and mostra_calendario = 'true' and exibir = 'true' order by inscricoes_mes desc limit 10";
+		$res_curso = mysqlexecuta($idcon, $sql_curso);
+		$max_curso = mysql_num_rows($res_curso);
+
+
+
+
+		$sql_form = "SELECT * FROM tr_formacoes where categoria_id like '%[$id]%' and mostra_calendario = 'true' and exibir = 'true' limit 5";
+		$res_form = mysqlexecuta($idcon, $sql_form);
+		$max_form = mysql_num_rows($res_form);
+
+		if ($num_black % 2 == 0) {
+
+			$var_cor = "";
+		} else {
+			$var_cor = "background-color: #f7f7f7 !important";
+		}
+
+		?>
+
+
+		<section class="carrossel-home multiplos-carrosseis" style="<?php echo $var_cor; ?>">
+			<div class="container" style="max-width: 95%;">
+
+				<h2><?php echo utf8_encode($row['abrev_categ']); ?></h2>
+				<center><?php echo utf8_encode($row['nome_categ']); ?></center>
+
+				<div class="owl-carousel owl-theme ch-padrao">
+
+
+
+					<?php
+
+						for ($f = 0; $f < $max_form; $f++) {
+
+
+
+
+							$nome_form = utf8_encode(mysql_result($res_form, $f, "nome_formacao"));
+							$abrev_form  = utf8_encode(mysql_result($res_form, $f, "nome_abrev_form"));
+							$url_form  = "/formacao/" . mysql_result($res_form, $f, "url");
+							$img_form  = "/imagens/formacoes/" . mysql_result($res_form, $f, "imagem_curso");
+							$img_form_icon = 	"/img/" . mysql_result($res_form, $f, "img");
+
+							$relacionados = mysql_result($res_form, $f, "cursos_do_combo");
+							$separando = explode(",", $relacionados);
+
+							$valor_avista = mysql_result($res_form, $f, "valor_avista");
+
+							$valor_promocao_aovivo = mysql_result($res_form, $f, "promocao_aovivo");
+
+							$valor_desconto_aovivo = $valor_avista - ($valor_avista * $valor_promocao_aovivo);
+							$valor_por_aovivo  	= $valor_desconto_aovivo;
+
+
+
+							$cursosdaformacao = "
+								<span>
+									<i>" . $abrev_form . "</i>
+									<b>" . count($separando) . " Cursos em 1 Formação</b>
+								</span>";
+
+
+
+							?>
+
+
+
+						<div class="item">
+							<a href="<?php echo $url_form; ?>">
+
+
+
+								<img src="<?php echo $img_form; ?>" alt="<?php echo $nome_form; ?>">
+
+								<?php echo $cursosdaformacao; ?>
+
+
+								<div class="price-box">
+									<h4><?php echo $nome_form; ?></h4>
+
+									<div class="dividir-blocos">
+										<div class="bloco-2-1">
+
+											<small>de: R$ <span class="tracado"><?php echo getInfoAvista($valor_avista); ?></span> </small> <br>
+											<span>por: 12x R$ <b><?php echo number_format(getInfoParcela($valor_desconto_aovivo, 12), 2, ',', '.'); ?></b></span><br>
+											<i>ou <b>R$ <?php echo getInfoAvista($valor_por_aovivo); ?></b> à vista</i>
+										</div>
+										<div class="bloco-1-1">
+											<?php if (mysql_result($res_form, $f, "img") != "") { ?>
+
+												<img src="<?php echo $img_form_icon; ?>">
+
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					<?php
+
+						}
+
+
+						?>
+
+					<?php
+
+
+
+
+
+						for ($f = 0; $f < $max_curso; $f++) {
+
+
+
+							$nome_curso = utf8_encode(mysql_result($res_curso, $f, "nome_curso"));
+							$url_curso  = "/cursos/" . mysql_result($res_curso, $f, "url");
+							$img_curso  = "/imagens/cursos/" . mysql_result($res_curso, $f, "imagem_curso");
+							$img_curso_icon = 	"/img/" . mysql_result($res_curso, $f, "img");
+
+
+							$valor_avista = mysql_result($res_curso, $f, "valor_avista");
+
+							$valor_promocao_aovivo = mysql_result($res_curso, $f, "promocao_aovivo");
+
+							$valor_desconto_aovivo = $valor_avista - ($valor_avista * $valor_promocao_aovivo);
+							$valor_por_aovivo  	= $valor_desconto_aovivo;
+
+
+
+
+
+
+
+
+							?>
+
+
+						<div class="item">
+							<a href="<?php echo $url_curso; ?>">
+
+
+
+								<img src="<?php echo $img_curso; ?>" alt="<?php echo $nome_curso; ?>">
+
+								<?php //echo $cursosdaformacao;
+										?>
+
+
+								<div class="price-box">
+									<h4><?php echo $nome_curso; ?></h4>
+
+									<div class="dividir-blocos">
+										<div class="bloco-2-1">
+
+											<small>de: R$ <span class="tracado"><?php echo getInfoAvista($valor_avista); ?></span> </small> <br>
+											<span>por: 12x R$ <b><?php echo number_format(getInfoParcela($valor_desconto_aovivo, 12), 2, ',', '.'); ?></b></span><br>
+											<i>ou <b>R$ <?php echo getInfoAvista($valor_por_aovivo); ?></b> à vista</i>
+										</div>
+										<div class="bloco-1-1">
+											<?php if (mysql_result($res_curso, $f, "img") != "") { ?>
+
+												<img src="<?php echo $img_curso_icon; ?>">
+
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+
+
+
+					<?php
+
+						}
+
+
+						?>
+
+
+				</div>
+
+			</div>
+		</section>
+
+
+
+
+	<?php
+
+	}
+
+	?>
+
+
+
+
+
+
+	<section id="outros-servicos" class="section-padrao">
+		<ul class="dividir-blocos">
+			<li class="bloco-1-1">
+				<a href="https://www.trainning.com.br/pagina/simulados-itil-cobit-pmi">
+					<img src="https://www.trainning.com.br/svg/test.svg" alt="Simulados">
+					<h3>Simulados</h3>
+					<p>Faça nossos simulados e esteja mais preparado para provas e certificações.</p>
+				</a>
+			</li>
+			<li class="bloco-1-1">
+				<a href="https://www.trainning.com.br/certificacoes.php">
+					<img src="https://www.trainning.com.br/svg/certificate.svg" alt="Exames">
+					<h3>Exames</h3>
+					<p>Certifique-se e habilite-se para diversas oportunidades na áreas com TI e negócios.</p>
+				</a>
+			</li>
+			<li class="bloco-1-1">
+				<a href="https://www.trainning.com.br/pagina/downloads">
+					<img src="https://www.trainning.com.br/svg/download.svg" alt="Downloads">
+					<h3>Downloads</h3>
+					<p>A Trainning oferece o download de livros, apostilas, manuais e muito mais!</p>
+				</a>
+			</li>
+		</ul>
+	</section>
+
+	<section class="section-padrao depoimentos">
+		<div class="container">
+			<h3 class="title title-b">Depoimentos</h3>
+
+			<ul>
+
+				<?php
+
+				//- SELECT CURSO
+				$sql_depoimentos = "SELECT * FROM adm_depoimentos ORDER BY id DESC LIMIT 3";
+				$res_depoimentos = mysqlexecuta($idcon, $sql_depoimentos);
+				$max_depoimentos = mysql_num_rows($res_depoimentos);
+
+				for ($c = 0; $c < $max_depoimentos; $c++) {
+					$depoimento = utf8_encode(mysql_result($res_depoimentos, $c, "depoimento"));
+					$nome_depoimento = utf8_encode(mysql_result($res_depoimentos, $c, "nome"));
+
+					echo "<li>
+						<blockquote>
+							<i class='fa fa-quote-left' aria-hidden='true'></i>
+							<p>" . $depoimento . "</p>
+							<cite>– " . $nome_depoimento . "</cite>
+						</blockquote>
+					</li>";
+				}
+				?>
+
+
+
+
+			</ul>
+
+			<a href="/a-trainning.php" class="link-simples">Conheça mais a Trainning Education...</a>
+		</div>
+	</section>
+
+
+	<?php include 'include/blog.php'; ?>
+
+	<?php include 'include/formulario.php'; ?>
+
+	<?php include 'include/footer.php'; ?>
+
+	<script src="js/owl.carousel.js"></script>
+		
+
+
+	<script>
+		// modal cursos home
+		var modal = document.getElementById("myModal");
+
+		var btn = document.getElementById("Modal-Open");
+
+		var span = document.getElementsByClassName("modal-close")[0];
+
+		btn.onmouseover = function() {
+		  modal.style.display = "block";
+		}
+
+		span.onclick = function() {
+		  modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+		  if (event.target == modal) {
+		    modal.style.display = "none";
+		  }
+		}
+		// modal cursos home
+	</script>
+
+
+
+
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+	<script>
+		jQuery(document).ready(function($) {
+
+			$('#container-option-1').show();
+
+			var owl = $('.owl-carousel');
+
+			owl.on('initialize.owl.carousel initialized.owl.carousel ' +
+				'initialize.owl.carousel initialize.owl.carousel ' +
+				'resize.owl.carousel resized.owl.carousel ' +
+				'refresh.owl.carousel refreshed.owl.carousel ' +
+				'update.owl.carousel updated.owl.carousel ' +
+				'drag.owl.carousel dragged.owl.carousel ' +
+				'translate.owl.carousel translated.owl.carousel ' +
+				'to.owl.carousel changed.owl.carousel',
+				function(e) {
+					$('.' + e.type).removeClass('secondary').addClass('success');
+
+					window.setTimeout(function() {
+						$('.' + e.type).removeClass('success').addClass('secondary');
+					}, 500);
+				});
+
+			$('.videos .owl-carousel').owlCarousel({
+				items: 1,
+				merge: true,
+				loop: true,
+				margin: 10,
+				video: true,
+				lazyLoad: true,
+				center: true,
+				responsive: {
+					480: {
+						items: 2
+					},
+					600: {
+						items: 4
+					}
+				}
+			})
+
+			$('.carrossel-home .owl-carousel').owlCarousel({
+				loop: true,
+				nav: true,
+				lazyLoad: true,
+				margin: 30,
+				video: true,
+				dots: false,
+				responsive: {
+					0: {
+						items: 1
+					},
+					600: {
+						items: 3
+					},
+					960: {
+						items: 4,
+					},
+					1200: {
+						items: 6
+					}
+				}
+			});
+
+			$('.banner-home .owl-carousel').owlCarousel({
+				loop: true,
+				lazyLoad: true,
+				nav: true,
+				navText: ["◀", "▶"],
+				/*
+								dots: true,*/
+				items: 1,
+				autoplay: true,
+				autoplayTimeout: 8000,
+				animateOut: 'fadeOut',
+				animateIn: 'fadeIn',
+				autoplayHoverPause: true
+			});
+
+			/*-- CLIQUE NO FILTRO | ATIVA FILTRO + EXIBE E ATIVA CARROSSEL --*/
+			$('#filter-bar').on("click", "li", function() {
+
+				$("#filter-bar li").removeClass("active");
+				$(this).addClass("active");
+				$("#filter-bar").removeClass().addClass($(this).attr("data-target"));
+
+				var target = '#container-' + $(this).attr("data-target");
+
+				$('.carrossel').fadeOut(500);
+
+				$(target).fadeIn("slow");
+
+			});
+
+			/*-- EXIBE FILTRO NO MOBILE --*/
+			if ($(window).width() < 1023) {
+
+				$('.open-aside').on("click", function() {
+					$('#wrapper-filter').fadeToggle();
+				});
+
+				$('#wrapper-filter').on("click", function() {
+					$('#wrapper-filter').fadeOut();
+				});
+
+			}
+
+		})
+	</script>
+
+	<script type="text/javascript">
+		$('.lista-principais').bxSlider({
+			minSlides: 1,
+			maxSlides: 5,
+			slideWidth: 230,
+			adaptiveHeight: true,
+			pager: false,
+			slideMargin: 5,
+			pause: 5000,
+
+			speed: 1500,
+			autoHover: true,
+		});
+
+		$('.cursos-relacionados').bxSlider({
+			minSlides: 1,
+			maxSlides: 4,
+			slideWidth: 300,
+			adaptiveHeight: true,
+			pager: false,
+			slideMargin: 10,
+			pause: 8000,
+			auto: true,
+			speed: 1500
+		});
+
+		$('.depoimentos .container ul').bxSlider({
+			controls: false,
+			mode: 'fade',
+			auto: true,
+		});
+
+		$('.formacao').bxSlider({
+			minSlides: 1,
+			maxSlides: 5,
+			slideWidth: 230,
+			adaptiveHeight: true,
+			pager: false,
+			slideMargin: 10,
+			pause: 5000,
+
+			speed: 1500,
+			autoHover: true,
+		});
+	</script>
+</body>
+
+</html>

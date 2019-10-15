@@ -306,7 +306,7 @@ a[pop-up]:hover::after{
 						?>
 						<!-- modal cursos home coloquei -->
 						<div class="item">
-							<a pop-up="<?php echo $duracao; ?>" href="<?php echo $url_curso; ?>">
+							<a pop-up="<?php echo $nome_curso ?><?php echo $duracao ?>" href="<?php echo $url_curso; ?>">
 
 								<img src="<?php echo $img_curso; ?>" alt="<?php echo $nome_curso; ?>">
 

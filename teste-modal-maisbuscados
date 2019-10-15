@@ -251,6 +251,7 @@ a[pop-up]:hover::after{
 
 					if (substr($idmaisbuscados, 0, 2) != '90') {
 
+						$duracao = mysql_result($res_curso,0,"carga_horaria");
 						$sql_curso = "SELECT * FROM tr_cursos where id = '$idmaisbuscados'";
 						$res_curso = mysqlexecuta($idcon, $sql_curso);
 						$abrev_curso = ""; //utf8_encode(mysql_result($res_curso,0,"abrev_curso"));
@@ -268,6 +269,7 @@ a[pop-up]:hover::after{
 						$cursosdaformacao = "";
 					} else {
 
+						$duracao = mysql_result($res_curso,0,"carga_horaria");
 						$id_separando_form = substr($idmaisbuscados, 2);
 						$sql_curso = "SELECT * FROM tr_formacoes where id = '$id_separando_form'";
 						$res_curso = mysqlexecuta($idcon, $sql_curso);
@@ -304,7 +306,7 @@ a[pop-up]:hover::after{
 						?>
 						<!-- modal cursos home coloquei -->
 						<div class="item">
-							<a pop-up="<?php echo $nome_curso; ?>" href="<?php echo $url_curso; ?>">
+							<a pop-up="<?php echo $duracao; ?>" href="<?php echo $url_curso; ?>">
 
 								<img src="<?php echo $img_curso; ?>" alt="<?php echo $nome_curso; ?>">
 

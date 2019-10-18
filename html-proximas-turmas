@@ -23,42 +23,44 @@
  //- SELECT CURSO
  $sql_curso = "SELECT * FROM tr_cursos where url = '$url'";
  $res_curso = mysqlexecuta($idcon,$sql_curso);
- //- DADOS CURSO
- $id_curso = mysql_result($res_curso,0,"id");
- $id_curso_ajax = $id_curso;
- $nome_curso = utf8_encode(mysql_result($res_curso,0,"nome_curso"));
- $nome_curso_abrev = utf8_encode(mysql_result($res_curso,0,"abrev_curso"));
- $cond_especial	= mysql_result($res_curso,0,"cond_especial");
- $duracao = mysql_result($res_curso,0,"carga_horaria");
- $promocao = mysql_result($res_curso,0,"promocao");	
- $promocao_aovivo = mysql_result($res_curso,0,"promocao_aovivo");	
- $valor_avista = mysql_result($res_curso,0,"valor_avista"); 
- $valor_avista_formatado = number_format($valor_avista, 2, ',', '.');
- $valor_por	= $valor_avista-($valor_avista*$promocao);
- $valor_por_formatado = number_format($valor_por, 2, ',', '.');
- $img = "https://www.trainning.com.br/img/".mysql_result($res_curso,0,"img");
- $video =  mysql_result($res_curso, 0, "video");
+ $id_curso = mysql_result($res_curso, 0, "id");
 
- $valor_por_remoto = $valor_avista-($valor_avista*($promocao_aovivo));
- $valor_por_remoto_formatado = number_format($valor_por_remoto, 2, ',', '.');
- $relacionados = mysql_result($res_curso,0,"cursos_relacionados");	
- $separando = explode(",", $relacionados);
- $objetivo = mysql_result($res_curso,0,"objetivo");
- $conteudo = mysql_result($res_curso,0,"conteudo");
- $infoAdd = mysql_result($res_curso,0,"info_adicionais");
- $id_categ_curso = mysql_result($res_curso,0,"categoria_id");
- $idioma = mysql_result($res_curso,0,"idioma");
- $mostra_calendario = mysql_result($res_curso, 0, "mostra_calendario");
- 
- $tipo_presencial = mysql_result($res_curso,0,"presencial");
- $tipo_aovivo = mysql_result($res_curso,0,"aovivo");
- $url_engaged = mysql_result($res_curso, 0, "urlEngaged");
 
- $mais_curso_gratis = utf8_encode(mysql_result($res_curso,0,"mais_curso_gratis"));
+//- DADOS CURSO
+$id_curso = mysql_result($res_curso, 0, "id");
+$id_curso_ajax = $id_curso;
+$nome_curso = utf8_encode(mysql_result($res_curso, 0, "nome_curso"));
+$nome_curso_abrev = utf8_encode(mysql_result($res_curso, 0, "abrev_curso"));
+$cond_especial	= mysql_result($res_curso, 0, "cond_especial");
+$duracao = mysql_result($res_curso, 0, "carga_horaria");
+$promocao = mysql_result($res_curso, 0, "promocao");
+$promocao_aovivo = mysql_result($res_curso, 0, "promocao_aovivo");
+$valor_avista = mysql_result($res_curso, 0, "valor_avista");
+$valor_avista_formatado = getInfoAvista($valor_avista);
+$valor_por	= $valor_avista - ($valor_avista * $promocao);
+$valor_por_formatado = getInfoAvista($valor_por);
+$img = "https://www.trainning.com.br/img/" . mysql_result($res_curso, 0, "img");
+$video =  mysql_result($res_curso, 0, "video");
 
- $sql_calendarioPeriodo2 = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() GROUP BY periodo ORDER BY dt_inicio";
- $res_calendarioPeriodo2  = mysqlexecuta($idcon,$sql_calendarioPeriodo2);
- $maxcalendarioPeriodo2 = mysql_num_rows($res_calendarioPeriodo2);
+$valor_por_remoto = $valor_avista - ($valor_avista * ($promocao_aovivo));
+$valor_por_remoto_formatado = getInfoAvista($valor_por_remoto);
+$relacionados = mysql_result($res_curso, 0, "cursos_relacionados");
+$separando = explode(",", $relacionados);
+$objetivo = mysql_result($res_curso, 0, "objetivo");
+$conteudo = mysql_result($res_curso, 0, "conteudo");
+$infoAdd = mysql_result($res_curso, 0, "info_adicionais");
+$id_categ_curso = mysql_result($res_curso, 0, "categoria_id");
+$idioma = mysql_result($res_curso, 0, "idioma");
+$mostra_calendario = mysql_result($res_curso, 0, "mostra_calendario");
+
+$tipo_presencial = mysql_result($res_curso, 0, "presencial");
+$tipo_aovivo = mysql_result($res_curso, 0, "aovivo");
+
+$url_engaged = mysql_result($res_curso, 0, "urlEngaged");
+
+
+$mais_curso_gratis = utf8_encode(mysql_result($res_curso, 0, "mais_curso_gratis"));
+
 
 //- SELECT CATEGORIA
 $sql_categ_curso = "SELECT id,abrev_categ,url,cor,cursos_destaques,mais_vendidos_cur FROM tr_cursos_categ where id = '$id_categ_curso'";

@@ -16,7 +16,6 @@
 
 	<?php
 	include "conexao.php";
-	require_once "conexao.php";
 	include 'include/head.php';
 	?>
 
@@ -200,7 +199,7 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 			"installment.amount": "<?php echo str_replace(',', '.', getInfoParcela($valor_por, 12)); ?>"
 		}]
 	</script>
-<!-- Criteo Product Tag -->
+	<!-- Criteo Product Tag -->
 	<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
 	<script type="text/javascript">
 		window.criteo_q = window.criteo_q || [];
@@ -362,6 +361,10 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 						$valor_por_aovivo  	= $valor_desconto_aovivo;
 						$cursosdaformacao = "";
 						$contentemodal = $nome_curso ."<br>". $duracao ;
+						//- SELECT CURSO
+						$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 3";
+						$res_calendario = mysqlexecuta($idcon, $sql_calendario);
+						$maxcalendario = mysql_num_rows($res_calendario);
 					} else {
 						$duracao = mysql_result($res_curso,0,"carga_horaria");
 						$id_separando_form = substr($idmaisbuscados, 2);
@@ -393,6 +396,10 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 									<b>" . count($separando) . " Cursos em 1 Formação</b>
 								</span>";
 								$contentemodal = $nome_curso . "\r\n" . $duracao ;
+						//- SELECT CURSO
+						$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 3";
+						$res_calendario = mysqlexecuta($idcon, $sql_calendario);
+						$maxcalendario = mysql_num_rows($res_calendario);
 					}
 
 					if ($valor_avista != '0.00') {
@@ -432,14 +439,9 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 									<h4 style="margin-bottom: 0;text-align: center;color: #FFC107;"><span style="color: white;letter-spacing: 1px;">Duração: </span><?php echo $duracao; ?></h4>
 									<!-- proximas turma -->
 									<div class="prox-turmas">
-										<p><span>Próximas turmas previstas</span></p>
+										<p><span style="color: white;">Próximas turmas previstas</span></p>
 										<ol>
 											<?php
-
-											//- SELECT CURSO
-											$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 3";
-											$res_calendario = mysqlexecuta($idcon, $sql_calendario);
-											$maxcalendario = mysql_num_rows($res_calendario);
 
 											if ($maxcalendario > 0) {
 												for ($c = 0; $c < $maxcalendario; $c++) {

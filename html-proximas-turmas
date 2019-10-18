@@ -184,7 +184,6 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 
 <body>
 
-
 	<script>
 		dataLayer = [{
 			"pageTitle": "<?php echo $title_seo; ?>",
@@ -218,7 +217,7 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 			});
 	</script>
 	<!-- END Criteo Product Tag -->
-	
+
 
 	<?php include 'include/header.php'; ?>
 
@@ -441,7 +440,7 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 									<h4 style="margin-bottom: 0;text-align: center;color: #FFC107;"><span style="color: white;letter-spacing: 1px;">Duração: </span><?php echo $duracao; ?></h4>
 									<!-- proximas turma -->
 									<div class="prox-turmas">
-										<p><span>Próximas turmas previstas</span></p>
+										<p><span style="color: white;">Próximas turmas previstas</span></p>
 										<ol>
 											<?php
 
@@ -466,6 +465,208 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 										</ol>
 									</div>
 									<!-- proximas turma -->
+									<!-- ASDASDA -->
+										<section id="proximas-turmas">
+		<div class="container">
+			<h3 class="title title-b" style="color: #FFF;">Próximas turmas de: <?php echo $nome_curso_abrev; ?></h3>
+
+
+			<?php
+
+
+			//- SELECT CURSO
+			$sql_calendarioGeral = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() GROUP BY estado ORDER BY dt_inicio";
+			$res_calendarioGeral = mysqlexecuta($idcon, $sql_calendarioGeral);
+			$maxcalendarioGeral = mysql_num_rows($res_calendarioGeral);
+
+			$sql_calendarioPeriodo = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() GROUP BY periodo ORDER BY dt_inicio";
+			$res_calendarioPeriodo = mysqlexecuta($idcon, $sql_calendarioPeriodo);
+			$maxcalendarioPeriodo = mysql_num_rows($res_calendarioPeriodo);
+
+
+			$sql_calendarioData = "SELECT MONTH(dt_inicio) FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() GROUP BY MONTH(dt_inicio)";
+			$res_calendarioData = mysqlexecuta($idcon, $sql_calendarioData);
+			$maxcalendarioData = mysql_num_rows($res_calendarioData);
+			?>
+
+
+
+			<div class="dividir-blocos">
+				<label class="bloco-1-1 c-data">
+					<select name="data" id="data" class="input_setect">
+						<option value="">DATA CURSO</option>
+						<?php
+
+						for ($d = 0; $d < $maxcalendarioData; $d++) {
+
+							$mesR = mysql_result($res_calendarioData, $d, "MONTH(dt_inicio)");
+
+							if ($mesR == '1') {
+								$mes = 'Janeiro';
+							} else if ($mesR == '2') {
+								$mes = 'Fevereiro';
+							} else if ($mesR == '3') {
+								$mes = 'Março';
+							} else if ($mesR == '4') {
+								$mes = 'Abril';
+							} else if ($mesR == '5') {
+								$mes = 'Maio';
+							} else if ($mesR == '6') {
+								$mes = 'Junho';
+							} else if ($mesR == '7') {
+								$mes = 'Julho';
+							} else if ($mesR == '8') {
+								$mes = 'Agosto';
+							} else if ($mesR == '9') {
+								$mes = 'Setembro';
+							} else if ($mesR == '10') {
+								$mes = 'Outubro';
+							} else if ($mesR == '11') {
+								$mes = 'Novembro';
+							} else if ($mesR == '12') {
+								$mes = 'Dezembro';
+							}
+
+							echo "<option value='" . $mesR . "'>" . $mes . "</option>";
+						}
+
+						?>
+					</select>
+				</label>
+
+				<label class="bloco-1-1 c-local">
+					<select name="local" id="local">
+						<option value="">ONDE QUER FAZER O CURSO</option>
+						<option value="SP">São Paulo - PRESENCIAL</option>
+						<option value="RJ">Rio de Janeiro - PRESENCIAL</option>
+						<option value=" "> ---------------</option>
+						<option value="SP (Online ao vivo)">São Paulo - Online ao vivo</option>
+						<option value="RJ (Online ao vivo)">Rio de Janeiro - Online ao vivo</option>
+						<option value=" "> ---------------</option>
+						<option value="AL">Alagoas - Online ao vivo</option>
+						<option value="AP">Amapá - Online ao vivo</option>
+						<option value="AM">Amazonas - Online ao vivo</option>
+						<option value="BA">Bahia - Online ao vivo</option>
+						<option value="CE">Ceará - Online ao vivo</option>
+						<option value="DF">Distrito Federal - Online ao vivo</option>
+						<option value="ES">Espírito Santo - Online ao vivo</option>
+						<option value="GO">Goiás - Online ao vivo</option>
+						<option value="MA">Maranhão - Online ao vivo</option>
+						<option value="MT">Mato Grosso - Online ao vivo</option>
+						<option value="MS">Mato Grosso do Sul - Online ao vivo</option>
+						<option value="PA">Pará - Online ao vivo</option>
+						<option value="PB">Paraíba - Online ao vivo</option>
+						<option value="PR">Paraná - Online ao vivo</option>
+						<option value="PE">Pernambuco - Online ao vivo</option>
+						<option value="PI">Piauí - Online ao vivo</option>
+						<option value="RN">Rio Grande do Norte - Online ao vivo</option>
+						<option value="RS">Rio Grande do Sul - Online ao vivo</option>
+						<option value="RO">Rondônia - Online ao vivo</option>
+						<option value="RR">Roraima - Online ao vivo</option>
+						<option value="SC">Santa Catarina - Online ao vivo</option>
+						<option value="SE">Sergipe - Online ao vivo</option>
+						<option value="TO">Tocantins - Online ao vivo</option>
+					</select>
+				</label>
+
+				<label class="bloco-1-1 c-hora">
+					<select name="horario" id="horario">
+
+						<option value="">PERÍODO</option>
+						<?php
+
+						for ($p = 0; $p < $maxcalendarioPeriodo; $p++) {
+
+							echo "<option value='" . mysql_result($res_calendarioPeriodo, $p, "periodo") . "'>" . mysql_result($res_calendarioPeriodo, $p, "periodo") . "</option>";
+						}
+
+						?>
+					</select>
+				</label>
+			</div>
+
+			<ul id="calendariobloco" class="calendario">
+
+				<?php
+
+				//- SELECT CURSO
+				$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 6";
+				$res_calendario = mysqlexecuta($idcon, $sql_calendario);
+				$maxcalendario = mysql_num_rows($res_calendario);
+
+				for ($c = 0; $c < $maxcalendario; $c++) {
+
+					if ($tipo_presencial == 'true' and (mysql_result($res_calendario, $c, "estado") == "SP" or mysql_result($res_calendario, $c, "estado") == "RJ")) {
+
+						echo "<li>";
+						echo "<div class='curso-pre'><strong>" . date('d/m/y', strtotime(mysql_result($res_calendario, $c, "dt_inicio"))) . " à " . date('d/m/y', strtotime(mysql_result($res_calendario, $c, "dt_termino"))) . "</strong>
+						<u><i class='fa fa-male' aria-hidden='true'></i> CURSO	PRESENCIAL </u></div>";
+						echo "<div><p>" . mysql_result($res_calendario, $c, "periodo") . " | <b>" . mysql_result($res_calendario, $c, "estado") . "</b></p>";
+						echo "</div>";
+
+						echo "<div><span>
+							<small>de <s>R$ " . $valor_avista_formatado . "</s> por</small>
+							<i>R$ <big>" . $valor_por_formatado . "</big></i>
+							<p>em até 12x de <b>R$ " . $valor_sem_juros . "</b></p>
+						</span></div>";
+
+						echo "<div>
+							<a onclick=\"document.getElementById('form-pedir-info').style.display='block';\" href=\"javascript:void(0)\" class=\"bt-p2\">Pedir informações</a>
+						</div>
+						<div>
+
+				<a href=\"https://www.trainning.com.br/inscricao.php?cur=" . $id_curso . "&tipo=presencial\" class=\"bt-p1\" >Inscreva-se</a>
+
+							<!--<a href=\"/inscricao.php?cur=$id_curso\" class=\"bt-p1\">Inscreva-se</a>-->
+
+
+
+						</div>";
+						echo "</li>";
+
+						//CURSO AO VIVO
+
+					}
+					if ($tipo_aovivo == 'true' and mysql_result($res_calendario, $c, "estado") == "SP") {
+
+						echo "<li>";
+						echo "<div class='curso-on'><strong>" . date('d/m/y', strtotime(mysql_result($res_calendario, $c, "dt_inicio"))) . " à " . date('d/m/y', strtotime(mysql_result($res_calendario, $c, "dt_termino"))) . "</strong>
+						<u><i class='fa fa-laptop' aria-hidden='true'></i> CURSO ONLINE AO VIVO </u></div>";
+						echo "<div><p>" . mysql_result($res_calendario, $c, "periodo") . "</p>";
+						echo "</div>";
+
+						echo "<div><span itemprop='price'>
+							<small>de <s>R$ " . $valor_avista_formatado . "</s> por</small>
+							<i>R$ <big>" . $valor_por_remoto_formatado . "</big></i>
+							<p>em até 12x de <b>R$ " . $valor_sem_juros_remoto . "</b></p>
+						</span></div>";
+
+						echo "<div>
+							<a onclick=\"document.getElementById('form-pedir-info').style.display='block';document.getElementById('tipo_curso').innerHTML='Formato Online ao Vivo';document.getElementById('input-tipo-curso-infocurso').value='remoto-ao-vivo';\" href=\"javascript:void(0)\" class=\"bt-p2\">Pedir informações</a>
+						</div>
+						<div>
+
+							<a href=\"https://www.trainning.com.br/inscricao.php?cur=" . $id_curso . "&tipo=ao-vivo\" class=\"bt-p1\" >Inscreva-se</a>
+							<!--<a href=\"/inscricao.php?cur=$id_curso&tipo=ao-vivo\" class=\"bt-p1\">Inscreva-se</a>-->
+
+
+
+
+						</div>";
+						echo "</li>";
+					}
+				}
+
+
+				?>
+
+
+
+			</ul>
+
+		</div>
+	</section>
+									<!-- AUSHDUAHSDUA -->
 									<a onclick="document.getElementById('form-pedir-info').style.display='block';" href="javascript:void(0)" class="bt-p2 new-bt" style="font-size: .9vw;width: 70%;padding: 8px;margin-top: 15px !important;">Pedir informaçôes</a>
 								</div>
 
@@ -475,7 +676,7 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 
 				<div class="content-receba-info" id="content-receba-info"  style="display: block;width: 50%;">
 
-				<h2 style="color: white;">aloo mundo></h2>
+				<h2 style="color: white;">Receba mais informações sobre:</h2>
 				
 
 

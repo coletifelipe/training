@@ -362,16 +362,7 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 						$valor_por_aovivo  	= $valor_desconto_aovivo;
 						$cursosdaformacao = "";
 						$contentemodal = $nome_curso ."<br>". $duracao ;
-													//- SELECT CURSO
-							$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 3";
-							$res_calendario = mysqlexecuta($idcon, $sql_calendario);
-							$maxcalendario = mysql_num_rows($res_calendario);
 					} else {
-
-							//- SELECT CURSO
-							$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 3";
-							$res_calendario = mysqlexecuta($idcon, $sql_calendario);
-							$maxcalendario = mysql_num_rows($res_calendario);
 						$duracao = mysql_result($res_curso,0,"carga_horaria");
 						$id_separando_form = substr($idmaisbuscados, 2);
 						$sql_curso = "SELECT * FROM tr_formacoes where id = '$id_separando_form'";

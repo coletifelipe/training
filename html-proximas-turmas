@@ -430,167 +430,31 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 									<h4 style="margin-bottom: 10px;text-align: center;color: white;    font-size: 1.2vw;"><?php echo $nome_curso; ?></h4>
 									<h4 style="margin-bottom: 0;text-align: center;color: #FFC107;"><span style="color: white;letter-spacing: 1px;">Duração: </span><?php echo $duracao; ?></h4>
 									<!-- proximas turma -->
-										<section itemscope itemtype="http://schema.org/Product">
+									<div class="prox-turmas">
+										<p style="color: white !important;">Próximas turmas previstas</p>
+										<ol>
+											<?php
 
-		<div class="topo-curso <?php echo $cor; ?>">
+											//- SELECT CURSO
+											$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 3";
+											$res_calendario = mysqlexecuta($idcon, $sql_calendario);
+											$maxcalendario = mysql_num_rows($res_calendario);
 
-			<div class="container dividir-blocos">
+											if ($maxcalendario > 0) {
+												for ($c = 0; $c < $maxcalendario; $c++) {
 
-				<div class="info-curso">
+													echo "<li>
+																	<span>" . date('d/m/y', strtotime(mysql_result($res_calendario, $c, "dt_inicio"))) . "</span>
+																	<span>" . mysql_result($res_calendario, $c, "periodo") . " | " . mysql_result($res_calendario, $c, "estado") . "</span>
+														  </li>";
+												}
+											} else {
+												echo "<li><span>Consulte-nos</span></li>";
+											}
 
-					<div class="avaliacao">
-						<span class="rate-ex3-cnt">
-							<span id="1" class="rate-btn-1 rate-btn rate-btn-hover"></span>
-							<span id="2" class="rate-btn-2 rate-btn rate-btn-hover"></span>
-							<span id="3" class="rate-btn-3 rate-btn rate-btn-hover"></span>
-							<span id="4" class="rate-btn-4 rate-btn rate-btn-hover"></span>
-							<span id="5" class="rate-btn-5 rate-btn rate-btn-hover"></span>
-						</span>
-						<span>
-							<span class="ratingValue">5</span>
-							<em>(<span>20</span>)votos </em>
-						</span>
-					</div>
-
-					<h1 itemprop="name" title="<?php echo $nome_curso; ?>">Curso <?php echo $nome_curso; ?></h1><br>
-					<?php if ($mais_curso_gratis) { ?>
-						<b class="mais-curso-gratis"><?php echo $mais_curso_gratis; ?></b>
-					<?php } ?>
-
-					<p>
-						<b>Carga horária:</b>
-						<?php echo $duracao; ?>
-					</p>
-
-					<a onclick="document.getElementById('form-pedir-info').style.display='block';" href="javascript:void(0)" class="bt-p2 new-bt">Pedir informações</a>
-
-					<hr class="clear">
-
-					<div class="prox-turmas">
-						<p><span>Próximas turmas previstas</span></p>
-						<ol>
-							<?php
-
-							//- SELECT CURSO
-							$sql_calendario = "SELECT * FROM tr_calendario WHERE curso_id = '$id_curso' AND dt_inicio >= CURDATE() ORDER BY dt_inicio LIMIT 3";
-							$res_calendario = mysqlexecuta($idcon, $sql_calendario);
-							$maxcalendario = mysql_num_rows($res_calendario);
-
-							if ($maxcalendario > 0) {
-								for ($c = 0; $c < $maxcalendario; $c++) {
-
-									echo "<li>
-													<span>" . date('d/m/y', strtotime(mysql_result($res_calendario, $c, "dt_inicio"))) . "</span>
-													<span>" . mysql_result($res_calendario, $c, "periodo") . " | " . mysql_result($res_calendario, $c, "estado") . "</span>
-										  </li>";
-								}
-							} else {
-								echo "<li><span>Consulte-nos</span></li>";
-							}
-
-							?>
-						</ol>
-					</div>
-
-				</div>
-
-
-				<?php
-				if ($video) {	?>
-
-					<div class="video-curso">
-						<?php echo $video; ?>
-					</div>
-
-				<?php } ?>
-
-			</div>
-
-		</div>
-
-		<div class="valores">
-			<div class="container dividir-blocos">
-				<div class="bloco-1-1 valor valor-presencial">
-					<strong>
-						<i class="fa fa-map-marker" aria-hidden="true"></i> Curso Presencial
-					</strong>
-					<div>
-						<div>
-							<span>
-								<?php if ($valor_avista != 0.00 and $tipo_presencial == 'true') { ?>
-									<small>de <s>R$ <?php echo $valor_avista_formatado; ?></s> por <b>R$ <?php echo $valor_por_formatado; ?></b></small>
-									<p> em até 12x de <b>R$ <big><?php echo $valor_sem_juros; ?></big></b></p>
-								<?php } else { ?>
-									<p>Consulte-nos</p>
-								<?php } ?>
-							</span>
-						</div>
-
-						<?php if ($valor_avista != 0.00 and $tipo_presencial == 'true' and  $mostra_calendario == 'true') { ?>
-
-							<?php if ($url_engaged) { ?>
-
-								<div>
-									<a href="<?php echo $url_engaged; ?>" class="bt-p1">Inscreva-se</a>
-								</div>
-
-							<?php } else { ?>
-
-								<div>
-									<a href="https://www.trainning.com.br/inscricao.php?cur=<?php echo $id_curso; ?>&tipo=presencial" class="bt-p1">Inscreva-se</a>
-								</div>
-							<?php } ?>
-						<?php } else { ?>
-							<div>
-								<a onclick="document.getElementById('form-pedir-info').style.display='block';document.body.style.overflow = 'hidden';" href="javascript:void(0)" class="bt-p2">Pedir informações</a>
-							</div>
-						<?php } ?>
-
-					</div>
-				</div>
-				<div class="bloco-1-1 valor valor-online">
-					<strong>
-						<i class="fa fa-laptop" aria-hidden="true"></i> Curso Online ao Vivo
-					</strong>
-					<div>
-						<div>
-							<span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-								<meta itemprop="priceCurrency" content="BRL" />
-								<?php if ($valor_avista != 0.00 and $tipo_aovivo == 'true') { ?>
-
-									<small>de <s>R$ <?php echo $valor_avista_formatado; ?></s> por <b>R$ <span itemprop="price"><?php echo $valor_por_remoto_formatado; ?></span></b></small>
-									<p> em até 12x de <b>R$ <big><?php echo $valor_sem_juros_remoto; ?></big></b></p>
-
-								<?php } else { ?>
-									<p>Consulte-nos</p>
-								<?php } ?>
-							</span>
-						</div>
-						<?php if ($valor_avista != 0.00 and $tipo_aovivo == 'true' and  $mostra_calendario == 'true') { ?>
-
-							<?php if ($url_engaged) { ?>
-								<div>
-									<a href="<?php echo $url_engaged; ?>" class="bt-p1">Inscreva-se</a>
-								</div>
-							<?php } else { ?>
-								<div>
-									<a href="https://www.trainning.com.br/inscricao.php?cur=<?php echo $id_curso; ?>&tipo=ao-vivo" class="bt-p1">Inscreva-se</a>
-								</div>
-							<?php } ?>
-						<?php } else { ?>
-							<div>
-								<a onclick="document.getElementById('form-pedir-info').style.display='block';document.body.style.overflow = 'hidden';" href="javascript:void(0)" class="bt-p2">Pedir informações</a>
-							</div>
-						<?php } ?>
-					</div>
-				</div>
-				<div class="bloco-1-1">
-					<?php include 'include/depoimentos-n.php'; ?>
-				</div>
-			</div>
-		</div>
-
-	</section>
+											?>
+										</ol>
+									</div>
 									<!-- proximas turma -->
 
 									<a onclick="document.getElementById('form-pedir-info').style.display='block';" href="javascript:void(0)" class="bt-p2 new-bt" style="font-size: .9vw;width: 70%;padding: 8px;margin-top: 15px !important;">Pedir informaçôes</a>

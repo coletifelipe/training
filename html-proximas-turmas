@@ -439,7 +439,7 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 									<h4 style="margin-bottom: 0;text-align: center;color: #FFC107;"><span style="color: white;letter-spacing: 1px;">Duração: </span><?php echo $duracao; ?></h4>
 									<!-- proximas turma -->
 									<div class="prox-turmas">
-										<p><span style="color: white;">Próximas turmas previstas</span></p>
+										<p style="color: white !important;"><span style="color: white !important;">Próximas turmas previstas ?</span></p>
 										<ol>
 											<?php
 
@@ -452,7 +452,7 @@ if (mysql_result($res_curso, 0, "seo_title")) {
 														  </li>";
 												}
 											} else {
-												echo "<li><span>Consulte-nos</span></li>";
+												echo "<li><span>Consulte?</span></li>";
 											}
 
 											?>

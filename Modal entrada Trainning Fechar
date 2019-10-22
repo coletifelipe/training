@@ -3,4 +3,8 @@
     /* display: block !important; */
 }
 
+a#fecha-modal {
+    position: absolute;
+}
+
 ESTAVA NO INDEX 59

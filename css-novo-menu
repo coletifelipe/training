@@ -1,0 +1,13 @@
+@media screen and (min-width: 980px)
+nav#menu-fixo > div > ul.menu > li.filters:hover {
+    background: transparent;
+    z-index: 1;
+}
+@media screen and (min-width: 980px)
+header#menu-principal > div.container > nav#menu-fixo.fixar-menu > div > ul.menu > li:hover {
+    background-color: #0176ff;
+}
+@media screen and (min-width: 980px)
+header#menu-principal > div.container > nav#menu-fixo.fixar-menu > div > ul.menu > li:hover > a {
+    color: #ffffff;
+}
